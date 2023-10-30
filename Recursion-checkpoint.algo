@@ -1,0 +1,42 @@
+// Algo algorithm for a recusive function to check if words are palindrome
+ALGORITHM palindrome_checker
+VAR
+  word: STRING ="kayak"
+  reverseword: STRING 
+BEGIN
+  
+  reverseword= reverse_string(word)
+//check if word contains a single character or an empty word 
+
+IF (word.length < 2 OR word = " ") THEN
+  write(word + " " +"is a palindrome")
+END_IF
+
+  //compare the ending character in each word against the other
+IF (word[word.length]-1 = reverseword[reverseword.length -1] )THEN
+
+  IF (word = reverseword) THEN
+    write(word +" "+ "is a palindrome")
+  END_IF
+  ELSE
+ write(word +" "+ "is not a palindrome")
+
+END_IF
+
+END
+    
+    FUNCTION reverse_string(word) : STRING
+    VAR
+      testString:STRING=" ";
+    BEGIN
+      // we wiil decrement from the word.length-1 until it is less than the length
+      // THis will enable us swap the words the otherway round in other for us to compare them
+      FOR i FROM word.length -1 TO 0 STEP 1  DO
+      testString = testString + word[i]
+        set_instructions
+      END_FOR
+      RETURN value ;
+    END
+
+END
+
